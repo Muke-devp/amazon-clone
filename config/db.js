@@ -8,7 +8,12 @@ const pool = mysql.createPool({
   database: process.env.DB_NAME || 'amazon_clone',
   waitForConnections: true,
   connectionLimit: 10,
-  queueLimit: 0
+  queueLimit: 0,
+  port: process.env.DB_PORT,
+  ssl: {
+    rejectUnauthorized: false
+  }
+
 });
 
 module.exports = pool.promise();
