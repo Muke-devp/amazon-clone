@@ -17,6 +17,10 @@ const productRoutes = require('./routes/productRoutes');
 app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
 
+// ከ Routes በፊት ወይም በኋላ ጨምረው
+app.get('/', (req, res) => {
+  res.send('Backend API is running successfully!');
+});
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
