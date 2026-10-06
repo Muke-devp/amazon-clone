@@ -21,6 +21,9 @@ app.use('/api/products', productRoutes);
 app.get('/', (req, res) => {
   res.send('Backend API is running successfully!');
 });
+app.get('/api/test', (req, res) => {
+  res.send('API route works fine!');
+});
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
